@@ -1,0 +1,27 @@
+#include<iostream>
+namespace Akshat {
+class Overloading
+{
+private:
+int b = 10;
+public:
+ Overloading(int a){
+     b = a;
+ }
+    friend Overloading* operator+(Overloading &p,Overloading &d){
+     Overloading u(100);
+     return p + d;
+}
+void Display(){
+    std::cout << this -> b;
+}
+};
+}
+int main(){
+Akshat::Overloading* o = new Akshat::Overloading(20);
+Akshat::Overloading* e = new Akshat::Overloading(20);
+Akshat::Overloading* result;
+result = *o + *e; 
+result->Display();
+return 0;
+}
